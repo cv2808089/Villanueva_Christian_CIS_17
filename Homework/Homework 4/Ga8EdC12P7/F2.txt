@@ -1,0 +1,2 @@
+This  is  a  test  file. Sentences  should  have  one  capital  letter.
+The  sentences  are  separated  by  spaces.
