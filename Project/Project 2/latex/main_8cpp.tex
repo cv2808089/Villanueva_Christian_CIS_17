@@ -1,0 +1,143 @@
+\hypertarget{main_8cpp}{}\doxysection{Blackjack\+\_\+v9/main.cpp File Reference}
+\label{main_8cpp}\index{Blackjack\_v9/main.cpp@{Blackjack\_v9/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}hand.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}card.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}badchoice.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}badpos.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6}{game\+Result}} \{ \newline
+\mbox{\hyperlink{blackjack__implementation_8cpp_a19ddef2ff5530075f5775a8c73e233e6af99cff3c988316e6ba1b72f1940d5165}{lose}}, 
+\mbox{\hyperlink{blackjack__implementation_8cpp_a19ddef2ff5530075f5775a8c73e233e6a7c9810eb47eca673ea17c570f0868b76}{win}}, 
+\mbox{\hyperlink{blackjack__implementation_8cpp_a19ddef2ff5530075f5775a8c73e233e6aec21c3f72731e39546afe86d425f7af6}{draw}}, 
+\mbox{\hyperlink{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6af99cff3c988316e6ba1b72f1940d5165}{lose}}, 
+\newline
+\mbox{\hyperlink{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6a7c9810eb47eca673ea17c570f0868b76}{win}}, 
+\mbox{\hyperlink{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6aec21c3f72731e39546afe86d425f7af6}{draw}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a91fa65f2a2dc8060907776b0ce53139c}{draw\+Card}} (\mbox{\hyperlink{class_card}{Card}} \&)
+\item 
+int \mbox{\hyperlink{main_8cpp_a3ace20a9a488cad80d50a6cd59730dc5}{check}} (\mbox{\hyperlink{class_hand}{Hand}}, \mbox{\hyperlink{classplayer}{player}}, string, string, int, int)
+\item 
+int \mbox{\hyperlink{main_8cpp_a2e7c44846b65e75d32c5efc08da4e417}{ace\+Get}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{main_8cpp_a18920ddc94532a34d50836c7c9d8c38b}{binary\+File\+Manip}} (string, char $\ast$, int)
+\item 
+void \mbox{\hyperlink{main_8cpp_afa878bc49d10b5d3dc1c8cd6d19f4152}{binary\+Record}} (\mbox{\hyperlink{class_card}{Card}})
+\item 
+\mbox{\hyperlink{blackjack__implementation_8cpp_a19ddef2ff5530075f5775a8c73e233e6}{game\+Result}} \mbox{\hyperlink{main_8cpp_a1a376e5d4472e2bf9890d6c202fd8ae1}{results}} (int, int, int, int)
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6}\label{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6}} 
+\index{main.cpp@{main.cpp}!gameResult@{gameResult}}
+\index{gameResult@{gameResult}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{gameResult}{gameResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{blackjack__implementation_8cpp_a19ddef2ff5530075f5775a8c73e233e6}{game\+Result}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lose@{lose}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!lose@{lose}}}\mbox{\Hypertarget{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6af99cff3c988316e6ba1b72f1940d5165}\label{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6af99cff3c988316e6ba1b72f1940d5165}} 
+lose&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{win@{win}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!win@{win}}}\mbox{\Hypertarget{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6a7c9810eb47eca673ea17c570f0868b76}\label{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6a7c9810eb47eca673ea17c570f0868b76}} 
+win&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{draw@{draw}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!draw@{draw}}}\mbox{\Hypertarget{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6aec21c3f72731e39546afe86d425f7af6}\label{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6aec21c3f72731e39546afe86d425f7af6}} 
+draw&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lose@{lose}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!lose@{lose}}}\mbox{\Hypertarget{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6af99cff3c988316e6ba1b72f1940d5165}\label{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6af99cff3c988316e6ba1b72f1940d5165}} 
+lose&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{win@{win}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!win@{win}}}\mbox{\Hypertarget{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6a7c9810eb47eca673ea17c570f0868b76}\label{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6a7c9810eb47eca673ea17c570f0868b76}} 
+win&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{draw@{draw}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!draw@{draw}}}\mbox{\Hypertarget{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6aec21c3f72731e39546afe86d425f7af6}\label{main_8cpp_a19ddef2ff5530075f5775a8c73e233e6aec21c3f72731e39546afe86d425f7af6}} 
+draw&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 16 of file main.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a2e7c44846b65e75d32c5efc08da4e417}\label{main_8cpp_a2e7c44846b65e75d32c5efc08da4e417}} 
+\index{main.cpp@{main.cpp}!aceGet@{aceGet}}
+\index{aceGet@{aceGet}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{aceGet()}{aceGet()}}
+{\footnotesize\ttfamily int ace\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a18920ddc94532a34d50836c7c9d8c38b}\label{main_8cpp_a18920ddc94532a34d50836c7c9d8c38b}} 
+\index{main.cpp@{main.cpp}!binaryFileManip@{binaryFileManip}}
+\index{binaryFileManip@{binaryFileManip}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{binaryFileManip()}{binaryFileManip()}}
+{\footnotesize\ttfamily char$\ast$ binary\+File\+Manip (\begin{DoxyParamCaption}\item[{string}]{,  }\item[{char $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file blackjack\+\_\+implementation.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_afa878bc49d10b5d3dc1c8cd6d19f4152}\label{main_8cpp_afa878bc49d10b5d3dc1c8cd6d19f4152}} 
+\index{main.cpp@{main.cpp}!binaryRecord@{binaryRecord}}
+\index{binaryRecord@{binaryRecord}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{binaryRecord()}{binaryRecord()}}
+{\footnotesize\ttfamily void binary\+Record (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_card}{Card}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a3ace20a9a488cad80d50a6cd59730dc5}\label{main_8cpp_a3ace20a9a488cad80d50a6cd59730dc5}} 
+\index{main.cpp@{main.cpp}!check@{check}}
+\index{check@{check}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily int check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hand}{Hand}}}]{,  }\item[{\mbox{\hyperlink{classplayer}{player}}}]{,  }\item[{string}]{,  }\item[{string}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file blackjack\+\_\+implementation.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a91fa65f2a2dc8060907776b0ce53139c}\label{main_8cpp_a91fa65f2a2dc8060907776b0ce53139c}} 
+\index{main.cpp@{main.cpp}!drawCard@{drawCard}}
+\index{drawCard@{drawCard}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{drawCard()}{drawCard()}}
+{\footnotesize\ttfamily void draw\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_card}{Card}} \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a1a376e5d4472e2bf9890d6c202fd8ae1}\label{main_8cpp_a1a376e5d4472e2bf9890d6c202fd8ae1}} 
+\index{main.cpp@{main.cpp}!results@{results}}
+\index{results@{results}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{results()}{results()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{blackjack__implementation_8cpp_a19ddef2ff5530075f5775a8c73e233e6}{game\+Result}} results (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file blackjack\+\_\+implementation.\+cpp.
+
