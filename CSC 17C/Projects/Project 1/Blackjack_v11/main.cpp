@@ -13,6 +13,7 @@
 #include <set>
 #include <map>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 
@@ -444,6 +445,11 @@ int main()
     {
         cout << *i;
     }
+    
+    int e = count(gameName.begin(), gameName.end(), 'a');
+    if(e > 2)
+        cout << "Something's wrong" << endl;
+    
     
     //exits program
     return 0;
